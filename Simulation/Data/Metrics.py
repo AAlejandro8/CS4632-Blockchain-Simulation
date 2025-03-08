@@ -2,10 +2,9 @@ import random
 
 class Metrics:
     def __init__(self):
-        self.propagation_time = []
+        self.propagation_times = []
         self.throughput = 0
         self.latency = 0
-        self.fork_rate = 0
     
     def calculate_metrics(self):
         self.throughput += 1

@@ -10,7 +10,7 @@ class Transaction:
         self.signature = self._generate_signature()
     
     def _generate_signature(self):
-        return hashlib.sha256(f"{ self.transaction_id }{ self.data }".encode()).hexdigest()
+        return hashlib.sha256(f"{self.transaction_id}{self.data}".encode()).hexdigest()
     
     def validate(self):
-        return hashlib.sha256(f"{ self.transaction_id }{ self.data }".encode()).hexdigest() == self.signature
+        return hashlib.sha256(f"{self.transaction_id}{self.data}".encode()).hexdigest() == self.signature

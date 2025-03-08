@@ -8,15 +8,16 @@ class Node:
         self.connectivity = []
         self.is_malicious = False
         self.location = location
+        self.tx_count = 0
     
     def broadcast_transaction(self, transaction, network):
-        # check if the node is a bad apple
         if not self.is_malicious:
             for connected_node in self.connectivity:
                 network.nodes[connected_node].receive_transaction(transaction)
-                
+    
     def receive_transaction(self, transaction):
         if self.validate_transaction(transaction):
+            self.tx_count += 1
             return True
         return False
     
