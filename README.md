@@ -46,7 +46,7 @@ Small-world networks represent a balance between completely random networks (whi
 ```bash
 pip install networkx simpy plotly
 ```
-2. Runt the main sim:
+2. Run the main sim:
 ```
 python main.py
 ```
