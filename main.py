@@ -1,15 +1,16 @@
 import random
 from Blockchain.Node import Node
+from Blockchain.Transaction import Transaction
 from Simulation.Simulator import Network, Simulator
 from Simulation.Visualization import Visualization
 
 if __name__ == "__main__":
     # Create network
-    network = Network("random")
+    network = Network("small_world")
     
     # Add nodes
     for i in range(10):
-        node = Node(i, bandwidth=1000, latency=0.1, location=(random.random(), random.random()))
+        node = Node(i, bandwidth=random.uniform(1, 100), latency=random.uniform(0.01, 0.5), location=(random.random(), random.random()))
         network.add_node(node)
     
     network.generate_topology()
@@ -20,6 +21,14 @@ if __name__ == "__main__":
     # Create visualization
     vis = Visualization(network, simulator.metrics)
     
-    # Run simulation and visualize
+    # Run simulation
     simulator.run_simulation()
+    
+    # Visualize topology
     vis.plot_topology()
+    
+    # Use actual transactions from the simulation for animation
+    transactions = list(simulator.transactions.values())
+    
+    # Animate transaction propagation
+    vis.animate_propagation(transactions)
