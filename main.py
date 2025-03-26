@@ -18,11 +18,15 @@ if __name__ == "__main__":
     # Create simulator
     simulator = Simulator(network, 10)
     
-    # Create visualization
-    vis = Visualization(network, simulator.metrics)
-    
     # Run simulation
     simulator.run_simulation()
+    
+    # Log the results of the simulation
+    run_id = 1  # Example run ID
+    simulator.log_run(run_id)
+    
+    # Create visualization
+    vis = Visualization(network, simulator.metrics)
     
     # Visualize topology
     vis.plot_topology()

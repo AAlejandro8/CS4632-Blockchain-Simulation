@@ -3,6 +3,7 @@ import random
 from Blockchain.Transaction import Transaction
 from Simulation.Data.Metrics import Metrics
 import networkx as nx
+import csv
 
 class Network:
     def __init__(self, topology="small_world"):
@@ -100,3 +101,13 @@ class Simulator:
             
             # Update metrics
             self.metrics.calculate_metrics()
+
+    def log_run(self, run_id):
+        with open('Simulation/Data/simulation_results.csv', mode='a', newline='') as file:
+            writer = csv.writer(file)
+            writer.writerow([
+                run_id, 
+                len(self.network.nodes), 
+                self.metrics.throughput, 
+                self.metrics.latency
+            ])
