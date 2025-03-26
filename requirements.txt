@@ -2,3 +2,4 @@ simpy
 networkx    
 plotly
 matplotlib
+pandas
