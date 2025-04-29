@@ -58,3 +58,9 @@ python main.py
 - Simulation of network attacks and resistance mechanisms
 - Advanced metrics for detailed performance analysis
 - Support for different consensus mechanisms and their impact on propagation
+
+## 📊 Overview
+This project simulates transaction propagation in peer-to-peer blockchain networks to explore the impact of network structure and communication constraints on performance. Using a small-world topology, the simulation replicates key dynamics of decentralized systems like Bitcoin and Ethereum.
+
+The results provide insights into how topology, latency, and bandwidth affect transaction speed and reliability—offering optimization guidance for blockchain protocols and networking strategies.
+
